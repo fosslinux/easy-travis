@@ -1,0 +1,3 @@
+#!/bin/bash
+travis/lxd "ubuntu:16.04"
+travis/debian

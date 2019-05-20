@@ -1,0 +1,10 @@
+dist: xenial
+jobs:
+    include:
+        - script: travis/debian-8
+        - script: travis/debian-9
+        - script: travis/debian-10
+        - script: travis/debian-sid
+        - script: travis/ubuntu-16.04
+        - script: travis/ubuntu-18.04
+        - script: travis/ubuntu-19.04

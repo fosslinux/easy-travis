@@ -1,0 +1,3 @@
+#!/bin/bash
+travis/lxd "debian:9"
+travis/debian

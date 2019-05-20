@@ -1,0 +1,3 @@
+#!/bin/bash
+travis/lxd "ubuntu:18.04"
+travis/debian
