@@ -1,3 +1,3 @@
 #!/bin/bash
-travis/lxd "debian:sid"
+travis/lxd "images/debian:sid"
 travis/debian
