@@ -3,11 +3,11 @@
 IMAGE=${1}
 
 # update
-sudo apt-get -y -q update
-sudo apt-get -y -q dist-upgrade
+sudo apt-get -qq update
+sudo apt-get -qq dist-upgrade
 
 # install lxd
-sudo apt-get -y -q install lxd
+sudo apt-get -qq install lxd
 
 # launch lxd container
 sudo lxc launch ${IMAGE} container
