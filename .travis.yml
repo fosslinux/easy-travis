@@ -1,10 +1,28 @@
 dist: xenial
 jobs:
     include:
-        - script: travis/debian-8
-        - script: travis/debian-9
-        - script: travis/debian-10
-        - script: travis/debian-sid
-        - script: travis/ubuntu-16.04
-        - script: travis/ubuntu-18.04
-        - script: travis/ubuntu-19.04
+        - script:
+          - travis/ubuntu-18.04
+          - source travis/ubuntu-18.04-run
+          - run echo "run works"
+        - script:
+          - travis/debian-8
+          - source travis/debian-8-run
+        - script:
+          - travis/debian-9
+          - source travis/debian-9-run
+        - script:
+          - travis/debian-10
+          - source travis/debian-10-run
+        - script:
+          - travis/debian-sid
+          - source travis/debian-sid-run
+        - script:
+          - travis/ubuntu-16.04
+          - source travis/ubuntu-16.04-run
+        - script:
+          - travis/ubuntu-18.04
+          - source travis/ubuntu-18.04-run
+        - script:
+          - travis/ubuntu-19.04
+          - source travis/ubuntu-19.04-run
