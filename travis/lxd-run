@@ -3,3 +3,12 @@
 run() {
     lxc exec container -- $*
 }    
+
+run_script() {
+    if [ ! -f $1 ] ; then
+        echo "invalid script path!"
+        exit 1
+    fi
+    CMD=$(cat $1 | awk 1 ORS=' ; ')
+    lxc exec container -- "${CMD}"
+}

@@ -5,6 +5,7 @@ jobs:
           - travis/ubuntu-18.04
           - source travis/ubuntu-18.04-run
           - run echo "run works"
+          - run_script example.sh
         - script:
           - travis/debian-8
           - source travis/debian-8-run
