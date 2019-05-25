@@ -11,20 +11,33 @@ A set of scripts I use to make Travis CI that bit easier.
 
 1. Copy the travis folder to your repository. You probably could probably use a git submodule for this, idk how to.
 
-2. For each of the targets (listed above) you want to use, add the following commands to a job in .travis.yml:
+2. Add the following two lines to the top of your .travis.yml:
 
-    - travis/target
-    - source travis/target-run
+```
+dist: xenial
+sudo: true
+```
 
-3. For each of your build commands, add:
+3. For each of the targets (listed above) you want to use, add the following commands to a job in .travis.yml:
 
-    - run BUILD_CMD
+```
+- travis/target
+- source travis/target-run
+```
+
+4. For each of your build commands, add:
+
+```
+- run BUILD_CMD
+```
 
 to your .travis.yml.
 
 If you want to run a script, add:
 
-    - run_script SCRIPT_PATH
+```
+- run_script SCRIPT_PATH
+```
 
 to your .travis.yml.
 
