@@ -1,4 +1,6 @@
 dist: xenial
+sudo: true
+
 jobs:
     include:
         - script:

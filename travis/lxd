@@ -11,3 +11,6 @@ sudo apt-get -qq install lxd
 
 # launch lxd container
 sudo lxc launch ${IMAGE} container
+
+# add to lxd group
+sudo usermod -aG lxd travis
