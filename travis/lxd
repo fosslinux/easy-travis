@@ -14,3 +14,6 @@ sudo lxc launch ${IMAGE} container
 
 # add to lxd group
 sudo usermod -aG lxd travis
+
+# initalize lxd
+sudo lxd init --preseed
