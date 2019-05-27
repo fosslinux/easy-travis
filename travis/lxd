@@ -9,11 +9,8 @@ sudo apt-get -qq dist-upgrade
 # install lxd
 sudo apt-get -qq install lxd
 
+# initalize lxd
+yes '' | sudo lxd init
+
 # launch lxd container
 sudo lxc launch ${IMAGE} container
-
-# add to lxd group
-sudo usermod -aG lxd travis
-
-# initalize lxd
-sudo lxd init --preseed
