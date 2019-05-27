@@ -10,7 +10,7 @@ sudo apt-get -qq dist-upgrade
 sudo apt-get -qq install lxd
 
 # initalize lxd
-yes | sudo lxd init
+yes '' | sudo lxd init
 
 # add to lxd group
 sudo usermod -aG lxd travis
