@@ -5,6 +5,9 @@ language: shell
 
 jobs:
     include:
+        - os: windows
+          script:
+          - travis/windows
         - script:
           - travis/ubuntu-18.04
           - source travis/ubuntu-18.04-run
