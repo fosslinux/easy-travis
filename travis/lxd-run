@@ -9,6 +9,6 @@ run_script() {
         echo "invalid script path!"
         exit 1
     fi
-    CMD=$(cat $1 | awk 1 ORS=' ; ')
-    sudo lxc exec container -- "${CMD}"
+    for line in $(cat $1) ; do
+        sudo lxc exec container -- "'${line}'"
 }
