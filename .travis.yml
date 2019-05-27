@@ -1,6 +1,8 @@
 dist: xenial
 sudo: true
 
+language: shell
+
 jobs:
     include:
         - script:
