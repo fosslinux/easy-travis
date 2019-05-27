@@ -11,5 +11,6 @@ run_script() {
     fi
     while read line ; do
         sudo lxc exec container -- "'${line}'"
+        echo $?
     done < $1
 }
