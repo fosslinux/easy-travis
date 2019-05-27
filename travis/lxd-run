@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 run() {
-    lxc exec container -- $*
+    sudo lxc exec container -- $*
 }    
 
 run_script() {
@@ -10,5 +10,5 @@ run_script() {
         exit 1
     fi
     CMD=$(cat $1 | awk 1 ORS=' ; ')
-    lxc exec container -- "${CMD}"
+    sudo lxc exec container -- "${CMD}"
 }
