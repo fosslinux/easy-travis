@@ -1,2 +1,2 @@
-choco upgrade all -y
+choco upgrade all -y -v
 wuauclt.exe /detectnow /updatenow
