@@ -1,7 +1,7 @@
 dist: xenial
 sudo: true
 
-language: shell
+language: minimal 
 
 jobs:
     include:
