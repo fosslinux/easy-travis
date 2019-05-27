@@ -10,7 +10,7 @@ run_script() {
         exit 1
     fi
     while read line ; do
-        sudo lxc exec container -- "'${line}'"
+        sudo lxc exec container -- "${line}"
         echo $?
     done < $1
 }
