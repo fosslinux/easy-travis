@@ -11,4 +11,5 @@ run_script() {
     fi
     for line in $(cat $1) ; do
         sudo lxc exec container -- "'${line}'"
+    done
 }
