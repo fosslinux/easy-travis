@@ -9,8 +9,8 @@ run_script() {
         echo "invalid script path!"
         exit 1
     fi
-    LXD_HOME="$(lxc exec container -- 'echo $HOME')"
-    lxc file push $1 container/
-    lxc exec container -- chmod +x /$1
-    lxc exec container -- /$1
+    LXD_HOME="$(sudo lxc exec container -- 'echo $HOME')"
+    sudo lxc file push $1 container/
+    sudo lxc exec container -- chmod +x /$1
+    sudo lxc exec container -- /$1
 }
