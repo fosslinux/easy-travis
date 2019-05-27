@@ -3,11 +3,11 @@
 IMAGE=${1}
 
 # update
-sudo apt-get -qq update
-sudo apt-get -qq dist-upgrade
+sudo apt-get -qq update > /dev/null
+sudo apt-get -qq dist-upgrade > /dev/null
 
 # install lxd
-sudo apt-get -qq install lxd
+sudo apt-get -qq install lxd > /dev/null
 
 # initalize lxd
 yes '' | sudo lxd init
