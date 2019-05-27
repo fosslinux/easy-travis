@@ -12,10 +12,5 @@ sudo apt-get -qq install lxd
 # initalize lxd
 yes '' | sudo lxd init
 
-# add to lxd group
-sudo usermod -aG lxd travis
-# reload environment
-exec sg lxd newgrp `id -gn` #
-
 # launch lxd container
-lxc launch ${IMAGE} container
+sudo lxc launch ${IMAGE} container
