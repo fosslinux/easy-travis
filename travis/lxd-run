@@ -9,7 +9,7 @@ run_script() {
         echo "invalid script path!"
         exit 1
     fi
-    for line in $(cat $1) ; do
-        sudo lxc exec container -- "'${line}'"
-    done
+    while read line ; do
+        lxc exec container -- "'${line}'"
+    done < $1
 }
