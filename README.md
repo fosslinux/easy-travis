@@ -9,20 +9,30 @@ A set of scripts I use to make Travis CI that bit easier.
 
 ## How to use in your repository
 
-1. Copy the travis folder to your repository. You probably could probably use a git submodule for this, idk how to.
+1. Copy the travis folder to your repository. You probably could probably use a
+git submodule for this, idk how to.
 
 2. Add the following two lines to the top of your .travis.yml:
 
-```
-dist: xenial
-sudo: true
+``` 
+dist: xenial 
+sudo: true 
 ```
 
-3. For each of the targets (listed above) you want to use, add the following commands to a job in .travis.yml:
+Ideally, you'll want to use the shell language, but any language should work.
+Please note that only the shell language is officially supported and if
+something dosen't work please try it first.
+
+```
+language: shell
+```
+
+3. For each of the targets (listed above) you want to use, add the following
+commands to a job in .travis.yml:
 
 ```
 - travis/target
-- source travis/target-run
+- source travis/target-run 
 ```
 
 4. For each of your build commands, add:
@@ -36,19 +46,20 @@ to your .travis.yml.
 If you want to run a script, add:
 
 ```
-- run_script SCRIPT_PATH
+- run_script SCRIPT_PATH 
 ```
 
 to your .travis.yml.
 
 ## How it works
 
-Travis CI only supports Ubuntu 14.04 and 16.04 natively, however there are a 
-host of different solutions avaliable to emulate other distributions. 
+Travis CI only supports Ubuntu 14.04 and 16.04 natively, along with Mac OS X
+and Windows.However there are a host of different solutions avaliable to
+emulate other distributions and OSes.
 
 ### LXD
 
-The official recommended way is docker, but I really dislike docker and it 
-wasn't working for my purposes, so I'm using LXD. LXD is a container 
+The official recommended way is docker, but I really dislike docker and it
+wasn't working for my purposes, so I'm using LXD. LXD is a container
 virtualization software that emulates an entire Linux distro, including having
 an init, etc.
