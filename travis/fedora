@@ -1,0 +1,3 @@
+#!/bin/bash
+sudo lxc exec container -- dnf -y update > /dev/null
+sudo lxc exec container -- dnf -y upgrade > /dev/null
