@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo lxc exec container -- yum -y upgrade > /dev/null

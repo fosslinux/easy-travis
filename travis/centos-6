@@ -1,0 +1,3 @@
+#!/bin/bash
+travis/lxd "images:centos/6"
+travis/centos
