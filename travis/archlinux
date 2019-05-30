@@ -1,0 +1,3 @@
+#!/bin/bash
+travis/lxd "images:archlinux/current"
+sudo lxc exec container -- yes | pacman -Syue > /dev/null
