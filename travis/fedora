@@ -1,3 +1,5 @@
 #!/bin/bash
-sudo lxc exec container -- dnf -y update > /dev/null
-sudo lxc exec container -- dnf -y upgrade > /dev/null
+sudo lxc exec container -- ping google.com -c 2
+sudo lxc exec container -- ip a
+sudo lxc exec container -- dnf -y update
+sudo lxc exec container -- dnf -y upgrade
