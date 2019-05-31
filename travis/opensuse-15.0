@@ -1,0 +1,3 @@
+#!/bin/bash
+travis/lxd "images:opensuse/15.0"
+travis/fedora
