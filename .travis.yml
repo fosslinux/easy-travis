@@ -48,10 +48,6 @@ jobs:
           - travis/centos-7-run
           
         - script:
-          - travis/fedora-28
-          - travis/fedora-28-run
-          
-        - script:
           - travis/opensuse-15.0
           - travis/opensuse-15.0-run
           
@@ -62,6 +58,10 @@ jobs:
         - script:
           - travis/opensuse-tumbleweed
           - travis/opensuse-tumbleweed-run
+          
+        - script:
+          - travis/fedora-28
+          - travis/fedora-28-run
           
         - script:
           - travis/fedora-29
