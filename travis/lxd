@@ -10,7 +10,39 @@ sudo apt-get -qq dist-upgrade > /dev/null
 sudo apt-get -qq install lxd > /dev/null
 
 # initalize lxd
-sudo lxd init --auto
+cat << EOF | sudo lxd init --preseed
+config: {}
+networks:
+- config:
+    ipv4.address: auto
+    ipv6.address: auto
+  description: ""
+  managed: false
+  name: lxdbr0
+  type: ""
+storage_pools:
+- config:
+    source: /var/lib/lxd/storage-pools/default
+  description: ""
+  name: default
+  driver: btrfs
+profiles:
+- config:
+    security.privileged: "true"
+  description: ""
+  devices:
+    eth0:
+      name: eth0
+      nictype: bridged
+      parent: lxdbr0
+      type: nic
+    root:
+      path: /
+      pool: default
+      type: disk
+  name: default
+cluster: null
+EOF
 
 # restart lxd
 sudo systemctl restart lxd
