@@ -1,5 +1,7 @@
 # easy-travis
 
+# DO NOT USE: ALPHA, MASTER BROKEN
+
 A set of scripts I use to make Travis CI that bit easier.
 
 ## Targets
