@@ -7,8 +7,6 @@ sudo apt-get -qq update > /dev/null
 sudo apt-get -qq dist-upgrade > /dev/null
 
 # install lxd
-sudo add-apt-repository -y ppa:ubuntu-lxc/lxd-stable > /dev/null
-sudo apt-get -qq update > /dev/null
 sudo apt-get -qq install lxd > /dev/null
 
 # initalize lxd
