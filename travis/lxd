@@ -15,5 +15,8 @@ sudo lxd init --auto
 # restart lxd
 sudo systemctl restart lxd
 
+# debugging
+sudo lxc profile show default
+
 # launch lxd container
 sudo lxc launch ${IMAGE} container
