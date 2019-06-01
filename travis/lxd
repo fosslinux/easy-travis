@@ -10,7 +10,7 @@ sudo apt-get -qq dist-upgrade > /dev/null
 sudo apt-get -qq install lxd > /dev/null
 
 # initalize lxd
-yes '' | sudo lxd init
+sudo lxd init --auto
 
 # launch lxd container
 sudo lxc launch ${IMAGE} container
