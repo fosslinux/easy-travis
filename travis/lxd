@@ -10,7 +10,7 @@ sudo snap refresh > /dev/null
 # install lxd
 sudo apt-get -qq purge lxd > /dev/null
 sudo snap install lxd > /dev/null
-sudo systemctl start lxd
+sudo systemctl start snap.lxd
 
 # initalize lxd
 cat << EOF | sudo lxd init --preseed
@@ -49,7 +49,7 @@ EOF
 sudo lxc --version
 
 # restart lxd
-sudo systemctl restart lxd
+sudo systemctl restart snap.lxd
 
 # debugging
 sudo lxc profile show default
