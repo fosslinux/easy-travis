@@ -11,7 +11,7 @@ sudo snap refresh > /dev/null
 sudo snap install lxd > /dev/null
 
 # initalize lxd
-cat << EOF | sudo lxd init --preseed
+cat << EOF | sudo /snap/bin/lxd init --preseed
 config: {}
 networks:
 - config:
@@ -44,7 +44,7 @@ profiles:
   name: default
 cluster: null
 EOF
-sudo lxc --version
+sudo /snap/bin/lxc --version
 
 # restart lxd
 sudo systemctl restart lxd
