@@ -5,17 +5,13 @@ IMAGE=${1}
 # update
 sudo apt-get -qq update > /dev/null
 sudo apt-get -qq dist-upgrade > /dev/null
+sudo snap refresh > /dev/null
 
 # install lxd
-sudo apt-get -qq install lxd zfsutils-linux > /dev/null
-sudo modprobe zfs
+sudo snap install lxd > /dev/null
 
 # initalize lxd
 sudo lxd init --auto
-truncate -s 20G lxd.img
-sudo lxc --version
-sudo lxc storage create default btrfs source=$(pwd)/lxd.img
-sudo lxc profile device add default root disk path=/ pool=default
 
 # restart lxd
 sudo systemctl restart lxd
