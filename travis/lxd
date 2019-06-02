@@ -8,7 +8,9 @@ sudo apt-get -qq dist-upgrade > /dev/null
 sudo snap refresh > /dev/null
 
 # install lxd
-sudo apt-get -qq -t xenial-backports lxd > /dev/null
+sudo apt-get -qq purge lxd > /dev/null
+sudo snap install lxd > /dev/null
+sudo systemctl start lxd
 
 # initalize lxd
 cat << EOF | sudo lxd init --preseed
