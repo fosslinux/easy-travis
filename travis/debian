@@ -1,3 +1,6 @@
 #!/bin/bash
 sudo lxc exec container -- apt-get -qq update > /dev/null
 sudo lxc exec container -- apt-get -qq dist-upgrade > /dev/null
+sudo lxc exec container -- ping 8.8.8.8 -c 2
+sudo lxc exec container -- cat /etc/resolv.conf
+sudo lxc exec container -- ping google.com -c 2
