@@ -37,7 +37,7 @@ profiles:
   devices:
     eth0:
       name: eth0
-      nictype: macvlan
+      nictype: physical 
       parent: lxdbr0
       type: nic
     root:
