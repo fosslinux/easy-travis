@@ -57,3 +57,5 @@ sudo lxc profile show default
 
 # launch lxd container
 sudo lxc launch ${IMAGE} container
+
+sudo lxc info --show-log local:container
