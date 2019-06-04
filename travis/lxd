@@ -26,10 +26,10 @@ networks:
   type: ""
 storage_pools:
 - config:
-    source: /var/snap/lxd/current/common/lxd/storage-pools/default
+    source: /var/snap/lxd/common/lxd/storage-pools/default
   description: ""
   name: default
-  driver: btrfs
+  driver: dir
 profiles:
 - config:
     security.privileged: "true"
