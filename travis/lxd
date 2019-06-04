@@ -5,12 +5,57 @@ IMAGE=${1}
 # update
 sudo apt-get -qq update > /dev/null
 sudo apt-get -qq dist-upgrade > /dev/null
+sudo snap refresh > /dev/null
 
 # install lxd
-sudo apt-get -qq install lxd > /dev/null
+sudo apt-get -qq purge lxd lxd-client > /dev/null
+sudo snap install lxd > /dev/null
+sudo snap start lxd
+export PATH=/snap/bin:$PATH
 
 # initalize lxd
-yes '' | sudo lxd init
+cat << EOF | sudo lxd init --preseed
+config: {}
+networks:
+- config:
+    ipv4.address: auto
+    ipv6.address: auto
+  description: ""
+  managed: false
+  name: lxdbr0
+  type: ""
+storage_pools:
+- config:
+    source: /var/snap/lxd/common/lxd/storage-pools/default
+  description: ""
+  name: default
+  driver: dir
+profiles:
+- config:
+    security.privileged: "true"
+  description: ""
+  devices:
+    eth0:
+      name: eth0
+      nictype: physical 
+      parent: lxdbr0
+      type: nic
+    root:
+      path: /
+      pool: default
+      type: disk
+  name: default
+cluster: null
+EOF
+sudo lxc --version
+
+# restart lxd
+sudo snap restart lxd
+
+# debugging
+sudo lxc profile show default
 
 # launch lxd container
 sudo lxc launch ${IMAGE} container
+
+sudo lxc info --show-log local:container
