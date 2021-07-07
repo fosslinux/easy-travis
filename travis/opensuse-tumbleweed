@@ -1,0 +1,3 @@
+#!/bin/bash
+travis/lxd "images:opensuse/tumbleweed"
+travis/opensuse

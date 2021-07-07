@@ -10,24 +10,83 @@ jobs:
           - source travis/ubuntu-18.04-run
           - run echo "run works"
           - run_script example.sh
+
         - script:
           - travis/debian-8
           - source travis/debian-8-run
+
         - script:
           - travis/debian-9
           - source travis/debian-9-run
+
         - script:
           - travis/debian-10
           - source travis/debian-10-run
+
         - script:
           - travis/debian-sid
           - source travis/debian-sid-run
+
         - script:
           - travis/ubuntu-16.04
           - source travis/ubuntu-16.04-run
+
         - script:
           - travis/ubuntu-18.04
           - source travis/ubuntu-18.04-run
+
         - script:
           - travis/ubuntu-19.04
           - source travis/ubuntu-19.04-run
+
+        - script:
+          - travis/centos-6
+          - travis/centos-6-run
+          
+        - script:
+          - travis/centos-7
+          - travis/centos-7-run
+          
+        - script:
+          - travis/opensuse-15.0
+          - travis/opensuse-15.0-run
+          
+        - script:
+          - travis/opensuse-42.3
+          - travis/opensuse-42.3-run
+          
+        - script:
+          - travis/opensuse-tumbleweed
+          - travis/opensuse-tumbleweed-run
+          
+        - script:
+          - travis/fedora-28
+          - travis/fedora-28-run
+          
+        - script:
+          - travis/fedora-29
+          - travis/fedora-29-run
+          
+        - script:
+          - travis/fedora-30
+          - travis/fedora-30-run
+          
+        - script:
+          - travis/alpine-3.6
+          - travis/alpine-3.6-run
+  
+        - script:
+          - travis/alpine-3.7
+          - travis/alpine-3.7-run
+  
+        - script:
+          - travis/alpine-3.8
+          - travis/alpine-3.8-run
+          
+        - script:
+          - travis/alpine-3.9
+          - travis/alpine-3.9-run
+          
+        - script:
+          - travis/alpine-edge
+          - travis/alpine-edge-run

@@ -11,6 +11,7 @@ sudo apt-get -qq install lxd > /dev/null
 
 # initalize lxd
 yes '' | sudo lxd init
+sudo systemctl start lxd
 
 # launch lxd container
 sudo lxc launch ${IMAGE} container
